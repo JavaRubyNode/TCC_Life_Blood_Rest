@@ -19,4 +19,6 @@ public class DoadorServices  {
 	// metodo para salvar o doador no banco de dados 
 	public Doador salvar(Doador doador){doador.setId(null); return dao.save(doador);}
 	
+	
+	public void deletar(Long id ){dao.delete(id);}
 }
