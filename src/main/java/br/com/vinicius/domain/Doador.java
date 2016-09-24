@@ -1,17 +1,30 @@
 package br.com.vinicius.domain;
 
-import java.io.Serializable;
 
-public class Doador implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8558914589068414876L;
-	
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@Entity
+public class Doador{
+
+	@JsonInclude(Include.NON_NULL)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@JsonInclude(Include.NON_NULL)
 	private String nome;
+	
+	@JsonInclude(Include.NON_NULL)
 	private String sobrenome;
+	
+	
 	public Long getId() {
 		return id;
 	}
