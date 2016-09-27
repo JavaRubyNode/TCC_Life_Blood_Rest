@@ -15,21 +15,42 @@ public class DoadorServices  {
 	@Autowired
 	private DoadorRepository dao;
 	
-	// metodo para listar os doadores 
+	//-----------------------listar os doadores--------------------------------------
+	
 	public List<Doador> listar(){return dao.findAll();}
 	
-	// metodo para salvar o doador no banco de dados 
+	//--------------------------------------------------------------------------------
+	
+	//--------------------salvar o doador no banco de dados---------------------------
+	
 	public Doador salvar(Doador doador){doador.setId(null); return dao.save(doador);}
 	
-	// metodo para apagar dos registros o doador
+	//---------------------------------------------------------------------------------
+	
+	//--------------------apagar dos registros o doador--------------------------------
+	
 	public void deletar(Long id ){dao.delete(id);}
 	
-	// metodo para buscar o doador passando por parametro o id
+	//---------------------------------------------------------------------------------
+	
+	
+	//--------------------------buscar o doador passando por parametro o id-------------
+	
 	public Doador buscar(Long id){Doador doadores = dao.findOne(id); return doadores;}
 	
-	// metodo para atualizar o doador 
+	//----------------------------------------------------------------------------------
+	
+	
+	//----------------------------------atualizar o doador------------------------------
+	
 	public void atualizar (Doador doador){verificarExistencia(doador);dao.save(doador);}
 	
-	// metodo para checar se o doador existe 
+	//----------------------------------------------------------------------------------
+	
+	
+	//--------------------------------checar se o doador existe--------------------------
+		
 	private void verificarExistencia(Doador doador){buscar(doador.getId());}
+	
+	//----------------------------------------------------------------------------------
 }
