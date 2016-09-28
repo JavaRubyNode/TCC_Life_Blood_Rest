@@ -36,7 +36,7 @@ public class DoadorResources {
 	//--------------------------------------------------------------------------------------------
 	
 	
-	//------------------------------- Salvar Dodores ---------------------------------------------
+	//------------------------------- Salvar Doadores ---------------------------------------------
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> salvar(@Valid @RequestBody Doador doador){
